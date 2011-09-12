@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xfire>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.207.47.110</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>41.185.60.18</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>41.203.23.28</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.63</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.43</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.20</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>-= SGS BF2 RANKED I Server =-</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.28</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.31</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>-= SGS BF2 RANKED URBAN I Server =-</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.2.128.108</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+</xfire>

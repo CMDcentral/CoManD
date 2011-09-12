@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="files/example.css"></link>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript" src="../jquery.corner.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#menu ul li").corner("6px top");
+			$("#menu1 li").corner("1px");
+			$("#differentcorners").corner("tl bl 20px").corner("tr 40px");
+			$("#cornereffects").corner("tl bevel 25px").corner("br notch 25px");
+			$("#mainblock").corner("20px");
+		});
+    </script>
+    <style type="text/css">
+    #menu1 {
+	      margin:0px;
+		  list-style-type: none;
+		  padding:0px;
+		  margin:10px 0px 0px 10px;
+		  zoom:1;
+	  }
+    #menu1 li {
+		  width:91px;
+		  height:19px;
+		  background-color:#64698a;
+		  padding:0px;
+		  font-size:14px;
+		  color:white;
+		  float:left;
+		  margin-right:3px;
+		  line-height:18px;
+		  text-align:center;
+		  margin-bottom:5px;
+		  border:1px solid #534c8a;
+	  }
+	  #differentcorners {
+		  margin-left:10px;
+		  margin-top:10px;
+		  height:100px;
+		  width:100px;
+		  border:thick solid #534c8a;
+		  background-color:#64698a;
+	  }
+	  #cornereffects {
+		  margin:10px 0px 0px 10px;
+		  height:100px;
+		  width:100px;
+		  border:thick solid #534c8a;
+		  background-color:#64698a;
+	  }
+	  pre {
+		  width:540px;
+	  }
+    </style>
+  </head>
+
+  <body>
+  	<div id="mainblock">
+  		<div id="menu">
+  			<div id="innermenu">
+		    <ul>
+		    	<li><a href="index.html">Welcome</a></li>
+		    	<li id="active"><a href="corners.html">Corners</a></li>
+		    	<li><a href="borders.html">Borders</a></li>
+		    	<li><a href="elements.html">Elements</a></li>
+		    	<li><a href="other.html">Other</a></li>
+		    	<li><a href="otherplugins.html">With other plugins</a></li>
+		    </ul>
+		    </div>
+		 </div>
+		 <br />
+
+		<h2>1px corner</h2>
+  	<pre>
+$(document).ready(function() {
+	$("#menu1 li").corner("1px");
+});</pre>
+    <ul id="menu1">
+    	<li>Look</li>
+    	<li>Ma</li>
+    	<li>No</li>
+    	<li>Images</li>
+    </ul>
+ 
+    
+    <h2>Different corners</h2>
+    <pre>$("#differentcorners").corner("tl bl 20px").corner("tr 40px");</pre>
+    <div id="differentcorners"></div>
+    
+    <h2>Corner Effects</h2>
+    <pre>$("#cornereffects").corner("tl bevel 25px").corner("br notch 25px");</pre>
+    <div id="cornereffects"></div>
+
+		  <div id="jlogo"><img  src="files/jQuery-logo.gif" /></div>
+    </div> 
+    
+  </body>
+</html>

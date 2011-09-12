@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="css/custom-theme/jquery-ui-1.8.16.custom.css" />
+	<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="jquery.multi-open-accordion-1.5.3.min.js"></script>
+    <script>
+	$(function() {
+		$( "#sortable" ).sortable();
+		$( "#sortable" ).disableSelection();
+	});
+	</script>
+
+    <script type="text/javascript">
+$(document).ready(function(){
+var selectedEffect = 'drop';
+$('#widgeteffect').hide(); // hide div by default
+$('a#widgetbutton').click(function() {
+$('#widgeteffect').toggle(selectedEffect); // First click should toggle to 'show'
+return false;
+});
+});
+</script>
+
+</head>
+<body>
+<div id="header"><div id="logo"><a href="index1.html"><img src="images/logoadmin.png" width="150" height="30" /></a></div><div id="headerlinks">LOGOUT</div></div>
+<div id="left">
+    		<div id="multiOpenAccordion">
+            
+        
+            
+        <h3><a href="#">DASHBOARD</a></h3>
+        <div><ul class="menulist">
+            <li style="height:30px;"><a href="#" id="widgetbutton">Toggle Widgets</a></li>
+            </ul>
+        </div>
+        
+        <h3><a href="#">GENERAL</a></h3>
+        <div><ul class="menulist">
+            <b>MENU</b>
+            <li>Menu Management</li>
+            </ul>
+        </div>
+        
+        <h3><a href="#">CONTENT</a></h3>
+        <div>
+          <ul class="menulist">
+            <b>PAGES</b>
+            <li>New Page</li>
+            <li>Edit Pages</li>
+            <b>SERVICES</b>
+            <li>Add Service</li>
+            <li>Edit Services</li>
+            <b>PRODUCTS</b>
+            <li>Add Product</li>
+            <li>Product List</li>
+            <b>NEWS</b>
+            <li>Sections</li>
+            <li>Categories</li>
+            <li>Add News</li>
+            <li>Edit Article</li>
+          </ul>
+        </div>
+       
+        <h3><a href="#">MEDIA</a></h3>
+        <div><ul class="menulist">
+            <b>GALLERY</b>
+            <li>Upload Images</li>
+            <li>New Gallery</li></ul>
+            <ul class="menulist">
+            <b>VIDEO</b>
+            <li>List videos</li>
+            <li>Add Video</li></ul>
+        </div>
+       
+        <h3><a href="#">CONFIGURATION</a></h3>
+        <div>
+        <ul class="menulist">
+            <b>SETUP</b>
+            <li>Company Information</li>
+            <li>Emails</li>
+            <li>Options</li>
+            </ul>
+        <ul class="menulist">
+            <b>THEMES</b>
+            <li>Edit Theme</li>
+            </ul>
+            <ul class="menulist">
+            <b>MANAGE MEMBERS</b>
+            <li>Add Member</li>
+            <li>Members</li></ul>
+            <ul class="menulist">
+            <b>MANAGE USERS</b>
+            <li>Manage Users</li>
+            </ul>
+          
+        </div>
+			</div>
+</div>
+
+<div id="content" class="ui-corner-all">
+	<div id="cleft">
+    	<div id="clefthead" align="right"><h1>Dashboard</h1>test</div>
+     	<div id="cleftbody">
+        	<div class="demo">
+
+				<div class="widgettoggler">
+				<div id="widgeteffect">
+				<h3 class="ui-widget-header ui-corner-all">Widgets</h3>
+					<p>
+						Drag and Drop widgets into the drop box to add them to your dashboard.
+					</p><div align="right"><a href="#" id="widgetbutton">Hide</a></div>
+				</div>
+				</div>
+			</div><!-- End demo -->
+            <div>
+            <div id="widgeteffect">
+            	<h3 class="ui-widget-header ui-corner-all">Content Header</h3>
+					<p>
+						left content bar
+					</p>
+             </div>
+             </div>
+
+
+        </div>
+    </div>
+    <div id="cright">
+    	<div id="righthead">
+    			
+    				<h3 class="ui-widget-header ui-corner-all">Left Content Header</h3>
+					<p>
+						left content 
+					</p>
+   				
+    	</div>
+    </div>
+</div>    
+
+
+
+<script type="text/javascript">
+		$(function(){
+			$('#multiOpenAccordion').multiOpenAccordion({
+				active: [1, 2],
+				click: function(event, ui) {
+					//console.log('clicked')
+				},
+				init: function(event, ui) {
+					//console.log('whoooooha')
+				},
+				tabShown: function(event, ui) {
+					//console.log('shown')
+				},
+				tabHidden: function(event, ui) {
+					//console.log('hidden')
+				}
+				
+			});
+			
+			$('#multiOpenAccordion').multiOpenAccordion("option", "active", [1,2]);
+		});
+	</script>
+</body>
+</html>

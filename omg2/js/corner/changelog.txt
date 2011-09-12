@@ -1,0 +1,69 @@
+JRC (jquery-roundcorners-canvas)
+www.meerbox.nl
+
+changelog
+
++++++ 0.9.1
+* fixed a bug which made background images reload in msie6
+
++++++ 0.9
+* now the corners are hidden in msie printing
+* performance improved
+* overflow isnt set to visible when not needed
+* added different options to help ie6 absolute position correctly
+
++++++ 0.8.2
+* fixed a bug that broke compatibility with jQuery.noConflict()
+* now corners render correctly when element itself is hidden
+
++++++ 0.8.1
+* ...
+
++++++ 0.8
+* added support for corner effect 'bevel' and 'notch'
+* events for Hover are now in namespace 'jrc'
+* destroy method improved
+* improved way of handeling table cells (ie6)
+* added support for a callback function
+* improved performance
+* fixed a bug related to getting the parent background color
+
++++++ 0.7
+* no more need to include excanvas.js! (a stripdown version as been included in jquery.corner.js)
+* now supports chainability of corner() so you can get different corners --> corner("tl bl 20px").corner("tr 40px");
+* now corners render correctly with hidden parent (Issue #16)
+* now works on table and table cells (Issue #17)
+* now handels border-width:thin|medium|thick in IE
+* added a method for removing corners --> $().corner("destroy")
+
++++++ 0.6.1
+* now correctly handles height 'auto' in msie7 (Issue #14)
+
++++++ 0.6
+* now doesnt do unnecessary things when no elements are found (Issue #12)
+* some extra checks on current_p (Issue #4)
+* fixed a msie6 redering issue which accured when height or width is odd (Issue #9)
+* now supports the change of border color when hovering (Issue #7)
+* borderswidth_smallest needed var before it (Issue #13)
+* fixed some issues with getting the correct width/height (now the Nested Divs example works correctly)
+* removed the functionality to load excanvas.pack.js when using MSIE (it created a lot of timing issues, - maby related to Issue #10)
+
++++++ 0.5
+* you now can set the background color of the parent
+* fixed a error that accured in msie when excanvas.js is not loaded
+* now excanvas.js loads automatically if needed
+* now supports 1 pixel 'border'
+
++++++ 0.4 
+* now works with javascript compressor 'packer' (http://dean.edwards.name/packer/)
+* better handling of parent position
+
++++++ 0.3
+* Safari issues fixed (used setAttribute, and now aware of rgba color values) 
+* some optimization
+
++++++ 0.2
+* put in place 'Best Practices' for plugins + some other code improvements
+
++++++ 0.1
+* initial release on code.google.com

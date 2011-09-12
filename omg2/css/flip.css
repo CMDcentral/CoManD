@@ -1,0 +1,65 @@
+*{
+	/* Resetting the default styles of the page */
+	margin:0;
+	padding:0;
+}
+
+.sponsorListHolder{
+	margin-bottom:30px;
+}
+
+.sponsor{
+	width:180px;
+	height:180px;
+	float:left;
+	margin:4px;	
+	/* Giving the sponsor div a relative positioning: */
+	position:relative;
+	cursor:pointer;
+}
+
+.sponsorFlip{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	border:1px solid #ddd;	
+	background:url("/images/background.jpg") no-repeat center center #f9f9f9;
+}
+
+.sponsorFlip:hover{
+	border:1px solid #999;
+	-moz-box-shadow:0 0 30px #999 inset;
+	-webkit-box-shadow:0 0 30px #999 inset;
+	box-shadow:0 0 30px #999 inset;
+}
+
+.sponsorFlip img{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-70px 0 0 -70px;
+}
+
+.sponsorData{
+	/* Hiding the .sponsorData div */
+	display:none;
+}
+
+.sponsorDescription{
+	font-size:11px;
+	padding:50px 10px 20px 20px;
+	font-style:italic;
+}
+
+.sponsorURL{
+	font-size:10px;
+	font-weight:bold;
+	padding-left:20px;
+}
+
+.clear{
+	/* This class clears the floats */
+	clear:both;
+}

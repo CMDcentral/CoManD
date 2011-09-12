@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xfire>
+	<error>Game hours feed requires Xfire login.  Use &lt;url&gt;?u=&lt;xfire login&gt;&amp;p=&lt;xfire password&gt;</error>
+</xfire>

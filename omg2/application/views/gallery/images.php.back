@@ -1,0 +1,26 @@
+<? $ref = $_SERVER['HTTP_REFERER']; ?>
+<div id="toolbar"><?=anchor($ref, "back"). " | "?>
+<?
+        if ($this->session->userdata('loggedin'))
+		 echo anchor("admin/editgallery/".$gallery[0]->id, "edit")
+?>
+</div>
+<h3><?=$gallery[0]->name;?> @ <sub><?=$gallery[0]->date?></sub></h3>
+<?=$gallery[0]->description?>
+<!-- <div class="gallery" id="imgcontainer"> -->
+<ul class="gallery">
+
+<?
+foreach ($images as $image)
+{
+?>
+<div id="img">
+<a rel="gallery" class="popup" href="/images/gallery/<?=$image->album?>/<?=$image->filename?>">
+ <img src="/thumb/gen/width/150/height/150/folder/gallery-<?=$image->album?>/image/<?=$image->filename?>" />
+</a>
+<? if ($this->session->userdata('loggedin')) { echo "<a href='/gallery/image_delete/".$image->id."' class='confirmClick'>delete</a>"; } ?>
+</div>
+<?
+}
+?>
+</ul>

@@ -1,0 +1,99 @@
+
+		function vmlCurve(r,b,c,m,ml,mt, position,p) {
+
+        	var l = m-ml;
+        	var t = m-mt;
+        	
+        	if (p == 'b') {
+	        	
+	        	if (position == 'tl') {
+		        	t = t-0.5;
+	        		l = l-0.5;
+        		}
+	        	if (position == 'tr') {
+		        	t = t-0.5;
+	        		l = l+0.5;
+        		}
+        		if (position == 'bl') {
+	        		t = t+0.5;
+	        		l = l-0.5;
+        		}
+        		if (position == 'br') {
+	        		t = t+0.5;
+	        		l = l+0.5;
+        		}
+	        	
+	        } else {
+		        
+		        if (position == 'tl') {
+		        	t = t-0.5;
+	        		l = l-0.5;
+        		}
+	        	if (position == 'tr') {
+		        	t = t-0.5;
+	        		l = l+0.5;
+        		}
+        		if (position == 'bl') {
+	        		t = t+0.5;
+	        		l = l-0.5;
+        		}
+        		if (position == 'br') {
+	        		t = t+0.5;
+	        		l = l+0.5;
+        		}
+		    }
+        	
+        	var a = "<vml:arc filled='False' strokeweight='"+b+"px' strokecolor='"+c+"' startangle='0' endangle='361' style=' top:" + t +"px;left: "+ l + ";width:" + r+ "px; height:" + r+ "px' />"
+
+        	return a;
+    	}
+		
+		var old_createVML = function(rparent,radius,position,bg,border_width,border_color) {
+	
+			var ml=1,mt=1,position,css;
+			
+			var maindiv = document.createElement('div');
+			maindiv.style.position = "absolute";
+			maindiv.style.overflow = "hidden";
+			maindiv.style.width = radius+"px";
+			maindiv.style.height = radius+"px";
+			maindiv.className = "MainDiv";
+			rparent.appendChild(maindiv);
+			
+			var subdiv = document.createElement('div');
+			subdiv.style.textAlign = "left";
+			subdiv.className = "SubDiv";
+			maindiv.appendChild(subdiv);
+
+			
+			if (position == 'tl') {
+				//maindiv.style.top = "-"+border_width+"px";
+				//maindiv.style.left = "-"+border_width+"px";
+			}
+			if (position == 'tr') {
+				//maindiv.style.top = "-"+border_width+"px";
+				//maindiv.style.right = "-"+border_width+"px";
+				ml=radius
+			}
+			if (position == 'bl') {
+				//maindiv.style.bottom = "-"+border_width+"px";
+				//maindiv.style.left = "-"+border_width+"px";
+				mt=radius;
+			}
+			if (position == 'br') {
+				//maindiv.style.bottom = "-"+border_width+"px";
+				//maindiv.style.right = "-"+border_width+"px";
+				mt=radius;
+				ml=radius;
+			}
+
+			h = "<vml:group  style='width:10px;height:10px;position:absolute;' coordsize='10,10' >";
+			h+=	vmlCurve(radius*3,radius+border_width,bg, -radius/2,ml,mt,position,'f');
+			if(border_width>0) {
+  				h+= vmlCurve(radius*2-border_width,border_width,border_color, border_width/2,ml,mt,position,'b');
+  			}
+            h+= "</vml:group>";
+
+			subdiv.innerHTML = h
+			
+			return maindiv;

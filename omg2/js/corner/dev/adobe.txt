@@ -1,0 +1,9 @@
+ function isASVInstalled() {
+		       try { 
+			       var asv = new ActiveXObject("Adobe.SVGCtl"); return true;
+		       }catch(e){ 
+			       
+			   }
+			   return false;
+		    }
+	        alert(isASVInstalled());

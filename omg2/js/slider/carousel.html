@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Agile Carousel: Full Example with All The Bells and Whistles</title>
+		<link rel="stylesheet" type="text/css" href="page.css">
+		<link rel="stylesheet" type="text/css" href="carousel.css">
+	</head>
+<body>
+
+<h1>Agile Carousel: JQuery Carousel Plugin</h1>
+<p class="sub">Beta 2.0 Example</p>
+
+<div id="slide_holder"><img class="loading" src="images/ajax_loader.gif" alt=""></div><!-- slide_holder -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.2/jquery-ui.min.js"></script>
+<script src="carousel_behavior_min.js"></script>
+<script type="text/javascript">
+	
+ $('#slide_holder').agile_carousel({
+	first_last_buttons: "yes",
+    hover_next_prev_buttons: "yes",
+    next_prev_buttons: "yes",
+    pause_button: "yes",
+    slide_buttons: "yes",
+	slide_captions: "JQuery Carousel Plugin|Agile Slide Types|JQuery UI Effects Available|Agile Settings|Carousel That's Built to Order", 
+    slide_directory: "slides",
+ 	slide_links: "http://code.google.com/p/agile-carousel/downloads/list,http://code.google.com/p/agile-carousel/downloads/list,http://code.google.com/p/agile-carousel/downloads/list,http://code.google.com/p/agile-carousel/downloads/list,http://code.google.com/p/agile-carousel/downloads/list",
+    slide_number_display: "yes",
+    timer_length: "7000",
+	transition_duration: 1000,
+	transition_easing: "easeOutBack",	
+    transition_type: "carousel",
+	water_mark: "yes"
+	 });
+
+</script>	
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xfire>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.79</ip>
+		<port>28980</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.82</ip>
+		<port>28990</port>
+		<country>za</country>
+		<name>-= SGS COD4 HARDCORE WARFARE I SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.79</ip>
+		<port>28970</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28963</port>
+		<country>za</country>
+		<name>iGame Hardcore Delta</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28961</port>
+		<country>za</country>
+		<name>iGame Core Beta</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28962</port>
+		<country>za</country>
+		<name>iGame Core Charlie</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>iGame Core Alpha</name>
+	</server>
+</xfire>

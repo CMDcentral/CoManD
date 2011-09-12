@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xfire>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>41.203.23.30</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.67</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+</xfire>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Demo 1</title>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript" src="dev/excanvas.js"></script>
+    <script type="text/javascript" src="jquery.corner.src.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#b1,#b2,#b3,#b4").corner("20px");
+		});
+    </script>
+    <style type="text/css">
+
+      body { 
+	      margin: 20px; 
+	      font-family: "Myriad Pro","Myriad Web","Lucida Grande","Trebuchet MS","Tahoma","Helvetica","Arial","sans-serif"; 
+	      background-color:#3f464c;
+	      bbackground-color:blue;
+	      text-align:center;
+	  }
+	  #t1,#t2,#t3,#t4 {
+		  border:1px solid white;
+		  width:230px;
+		  height:170px;
+		  display:block;
+		  margin:3px;
+	  }
+	  #t1 { background-color:#ff0000; }
+	  #t2 { background-color:#0000ff; }
+	  #t3 { background-color:#008000; }
+	  #t4 { background-color:#ffa500; }
+	  
+	   #b1,#b2,#b3,#b4 {
+		   height:100px;
+		   height:20px;
+		   border:1px solid green;
+		   display:block;
+		   margin:10px;
+		   color:white;
+		   background-color:pink;
+		   zoom:1;
+	   }
+    </style>
+  </head>
+
+  <body>
+  	<div id="t1">parent1<div id="b1">1</div></div>
+  	<div id="t2">parent2<div id="b2">2</div></div>
+  	<div id="t3">parent3<div id="b3">3</div></div>
+    <div id="t4">parent4<div id="b4">4</div></div>
+  </body>
+</html>

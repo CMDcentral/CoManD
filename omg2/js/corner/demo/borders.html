@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="files/example.css"></link>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript" src="../jquery.corner.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#menu ul li").corner("6px top");
+			$("#menu2 li").corner("10px Hover iefixheightint");
+			$("#differentborder").corner();
+			$("#mainblock").corner("20px");
+		});
+    </script>
+    <style type="text/css">
+      #menu2 {
+		  list-style-type: none;
+		  padding:0px;
+		  margin-left:10px;
+		  zoom:1;
+	  }
+	  #menu2 li {
+		  width:91px;
+		  height:19px;
+		  background-color:#64698a;
+		  padding:0px;
+		  font-size:14px;
+		  color:black;
+		  font-weight:bold;
+		  float:left;
+		  margin-right:3px;
+		  line-height:18px;
+		  text-align:center;
+		  margin-bottom:5px;
+		  border:1px solid #534c8a;
+	  }
+	  #menu2 li.jrcHover {
+		  border-color:black;
+	  }
+	  #differentborder {
+		  height:100px;
+		  width:100px;
+		  background-color:red;
+		  border:1px solid gray;
+		  border-top-width:thick;
+          border-right-color:orange;
+          border-bottom-color:blue;
+          border-left-width:3px;
+		  margin:10px 0px 0px 10px;
+	  }
+    </style>
+  </head>
+
+  <body>
+  	<div id="mainblock">
+  		<div id="menu">
+  			<div id="innermenu">
+		    <ul>
+		    	<li><a href="index.html">Welcome</a></li>
+		    	<li><a href="corners.html">Corners</a></li>
+		    	<li id="active"><a href="borders.html">Borders</a></li>
+		    	<li><a href="elements.html">Elements</a></li>
+		    	<li><a href="other.html">Other</a></li>
+		    	<li><a href="otherplugins.html">With other plugins</a></li>
+		    </ul>
+		    </div>
+		 </div>
+
+		<h2>Border color change</h2>
+    <pre>
+$(document).ready(function() {
+	$("#menu2 li").corner("6px tl br Hover");
+});</pre>
+	<pre style="margin-top:2px;">
+#menu2 li.jrcHover {
+	border-color:black;
+}
+</pre>
+    <ul id="menu2">
+    	<li>Look</li>
+    	<li>Ma</li>
+    	<li>No</li>
+    	<li>Images</li>
+    </ul>
+    
+    <h2>Different borders</h2>
+    
+<pre>
+border:1px solid gray;
+border-top-width:thick;
+border-right-color:orange;
+border-bottom-color:blue;
+border-left-width:3px;</pre>
+    
+    <div id="differentborder"></div>
+
+
+		  <div id="jlogo"><img  src="files/jQuery-logo.gif" /></div>
+		  <br />
+    </div> 
+    
+  </body>
+</html>

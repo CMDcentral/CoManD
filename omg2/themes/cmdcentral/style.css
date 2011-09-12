@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@import "menu.css";
+
+/* CSS Document */
+
+* {
+	margin: 0;
+}
+html {
+	height: 100%;
+}
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -121px; /* the bottom margin is the negative value of the footer's height */
+}
+#push {
+	height: 121px; /* .push must be the same height as .footer */
+}
+body {
+	background-image:url(images/bg.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	font-family:Geneva, sans-serif, Verdana;
+	color:#2A2A2A;
+	font-size:11px;
+	font:Geneva, sans-serif;
+	margin:0px;
+	height: 100%;
+}
+#motherframe {	
+		margin-top:0px;
+		padding:0px;
+		width:980px;
+		float:left;	
+}
+#centered {
+	        margin-left:auto;
+		margin-right:auto;
+		width:980px;
+}
+#header {
+		width:980px;
+		margin-top:30px;
+		text-align:left;
+		position:relative;
+		float:left;
+}
+#logo {
+	position:relative;
+	float:left;
+	width:300px;
+	margin-left:40px;
+}
+#headerlinks {
+	position:relative;
+	float:right;
+	margin-right:0px;
+	margin-top:10px;
+	margin-left:40px;
+}
+#content {
+	position:relative;
+	float: left;
+	width: 900px;
+	margin-top:20px;
+	margin-left:40px;
+	margin-right:40px;
+}
+#footer {
+		width:100%;
+		height:121px;
+		padding:0px;
+		margin:0px;
+		text-align:left;
+		float:left;
+		background-image:url(images/footer_bg.png);
+		background-repeat:repeat-x;
+}		
+#footercontent {
+	width:980px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#footerlinks {
+	position:relative;
+	margin-left:40px;
+	margin-top:31px;
+	float:left;
+	width:740px;
+	font-family:Geneva, sans-serif, Verdana;
+	color:#999;
+	font-size:10px;
+	font:Geneva, sans-serif;
+}
+#footerfollow {
+	position:relative;
+	margin-right:40px;
+	float:left;
+	width:160px;
+}
+.sidebox {
+    background-color: #FCFCFC;
+    border: 1px dotted #999999;
+    margin: 0 0 15px;
+    padding: 0 12px 12px;
+}    
+.sideboxhome {
+    float: left;
+    height: 170px;
+    margin-top: 10px !important;
+    width: 254px;
+}
+.img {
+    padding-right: 5px;
+    padding-left: 5px;
+}

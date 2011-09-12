@@ -1,0 +1,813 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<META NAME="description" CONTENT="PT Projects Port Elizabeth prides itself in its skills in Project Management with the main focus in general structural, factory facilities, mechanical, electrical, welding, hoists, cranes and all associated plant services., ">
+	<META NAME="keywords" CONTENT="platinum, platinum productions, platinum pro, platinum port elizabeth, pt projects, pt projects pe, pt projects port elizabeth, engineering port elizabeth, automotive engineering port elizabeth, electrical engineering port elizabeth, electrical, automotive, mechanical, mechanical engineering port elizabeth, material handling, material handling port elizabeth, robotics, robots, robotic engineering, robotic engineering port elizabeth, project management, project management port elizabeth, structural, factory facilities, welding, hoists, cranes port elizabeth, plants, plant services port elizabeth, rigging, vehicle manufacturing, robotics and automation, engineering design, design,">
+	<title>PT Projects Engineering Port Elizabeth | Tippler Load Beam Replacement - Port of Port Eliza</title>
+    	<script language="javascript" type="text/javascript" src="admin/includes/js/jquery/1.4/jquery-1.4.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="admin/includes/js/jquery.lightbox-0.5.js"></script>
+	<script language="javascript" type="text/javascript" src="admin/includes/js/jquery/ui/jquery-ui-1.8.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="admin/includes/js/attach_div_content_to_cursor.js"></script>
+	<script type='text/javascript' src='http://download.skype.com/share/skypebuttons/js/skypeCheck.js'></script>
+    <script language="javascript" type="text/javascript" src="admin/includes/js/nivoslider/1.7.js"></script>
+    <script language="javascript" type="text/javascript">
+	
+	function add_to_cart(products_id)
+	{
+		$(".add_to_cart_status_"+products_id).html("<span class='load'>Adding...</span>").load("content/add_to_cart.php",{products_id: products_id},function(data){
+			data_a = data.split("|");
+			$("#cart_total_products").html(data_a[0]);
+			$(".add_to_cart_status_"+products_id).html(data_a[1]);
+		});
+	}
+	
+	function remove_form_cart(products_id)
+	{
+		if(confirm("Are you sure you want to delete this product from your cart?\n\rClick OK to continue or Cancel to return."))
+		{
+			$("#cart_product_"+products_id).html("<td colspan='5'>Removing product...</td>").load("content/remove_from_cart.php",{products_id: products_id},function(data){
+				var data_a = data.split("|*|");
+				var total = data_a[1];
+				var total_qty = data_a[0];
+				
+				$("#gtotal_qty").html("<strong>"+total+"</strong>");
+				$("#product_gtotal").html("<strong>"+total_qty+"</strong>");
+				$("#cart_product_"+products_id).html("<td colspan='5'>&nbsp;</td>").fadeOut();
+			});;
+		}
+	}
+	
+	function update_qty(products_id)
+	{
+		var qty = $("#product_qty_"+products_id).val();
+		if(eval(qty) < 1)
+		{
+			$("#product_qty_"+products_id).val(1);
+			qty = 1;
+		}
+		$("#update_qty_form_"+products_id).css("display","none");
+		$("#update_qty_status_"+products_id).css("display","").html("Updating...").load("content/update_cart_qty.php",{products_id: products_id, qty: qty},function(data){
+			var data_a = data.split("|");
+			var total = data_a[1];
+			var total_qty = data_a[0];
+			var product_total = data_a[2];
+			$("#product_total_"+products_id).html(product_total);
+			
+			$("#update_qty_status_"+products_id).html("").css("display","none");
+			$("#update_qty_form_"+products_id).css("display","");
+			
+			$("#gtotal_qty").html("<strong>"+total+"</strong>");
+			$("#product_gtotal").html("<strong>"+total_qty+"</strong>");
+		});;
+	}
+	
+</script>	<script language="javascript" type="text/javascript">
+	function load_calander_data(year,month,position,calendar)
+	{
+		var width = $(".calendar_"+calendar+"#calander").width();
+		var height = $(".calendar_"+calendar+"#calander").height();
+		
+		$(".calendar_"+calendar+" #overlay").fadeIn(0).fadeTo(1,0).fadeTo(400,0.5);
+		$(".calendar_"+calendar+" #load").fadeIn(0).fadeTo(1,0).fadeTo(400,1);
+		setTimeout(function(){
+			$(".calendar_"+calendar+" #data").load("content/calander.php",{action:"load_calander_data",year:year,month:month,width:width,height:height,position:position,calendar:calendar},function(){
+				$(".calendar_"+calendar+" #overlay").fadeTo(800,0).fadeOut(0);
+				$(".calendar_"+calendar+" #load").fadeTo(800,0).fadeOut(0);
+				$(".calendar_"+calendar+" #data").fadeIn(800);
+			});
+		},400);
+	}
+	
+	function set_calander_size(width,height,calendar)
+	{
+		if(!width)
+		{
+			var width = $(body).width();
+		}
+		if(!height)
+		{
+			var height = $(body).height();
+		}
+		$(".calendar_"+calendar+"#calander").width(width);
+		$(".calendar_"+calendar+"#calander").height(height);
+		$(".calendar_"+calendar+" #data").width(width);
+		$(".calendar_"+calendar+" #data").height(height);
+		$(".calendar_"+calendar+" #load").width(width);
+		$(".calendar_"+calendar+" #load").height(height);
+		$(".calendar_"+calendar+" #overlay").width(width);
+		$(".calendar_"+calendar+" #overlay").height(height);
+	}
+	
+	function hide_day_full_content(day,width,height,left,top,width_per_day,height_per_day,calendar)
+	{
+		$('.calendar_'+calendar+' #calandar_day_'+day+'_full_content').animate({width: width_per_day+'px',height: height_per_day+'px'},1000).fadeOut(1000);
+		setTimeout(function(){
+			$('.calendar_'+calendar+' #calandar_day_'+day+'').css("display",'').animate({top: "0px",left:"0px"},600);
+			$('.calendar_'+calendar+' .hide').fadeIn(800);
+			$('.calendar_'+calendar+' .calander_day').removeClass("hide");
+		},1000);
+	}
+	
+	function show_day_full_content(day,width,height,left,top,calendar)
+	{
+		if(width > 400)
+		{
+			$('.calendar_'+calendar+' #calandar_day_'+day+'').animate({top: "-"+top+"px",left:"-"+left+"px"},600);
+			$('.calendar_'+calendar+' .calander_day').addClass("hide");
+			$('.calendar_'+calendar+' #calandar_day_'+day+'').removeClass("hide");
+			setTimeout(function(){
+				$('.calendar_'+calendar+' .hide').fadeOut(800);
+			},20);
+			setTimeout(function(){
+				$('.calendar_'+calendar+' #calandar_day_'+day+'').css("display",'none');
+			},590);
+			setTimeout(function(){
+				$('.calendar_'+calendar+' #calandar_day_'+day+'_full_content').animate({width: width+'px',height: (height-30)+'px'},1000).fadeIn(1000);
+			},600);
+		}
+		else
+		{
+			$("#calander_dialog").html($('.calendar_'+calendar+' #calandar_day_'+day+'_full_content').html());
+			$("#calendar_dialog_day").html(day);
+			$("#calander_dialog").dialog("open");
+		}
+	}
+</script>	<script language="javascript" type="text/javascript">
+	function next_image_fade(classsasa, slide_animation_time, total_slides)
+	{
+		var next = false;
+		var set_next = false;
+		var first = "";
+		var a = 1;
+		$("."+classsasa).each(function(){
+			if(first == "")
+			{
+				first = $(this).attr("id");
+			}
+			var display = $(this).css("display");
+			if(display != "none")
+			{
+				$(this).fadeOut(eval(slide_animation_time));
+				set_next = true;
+			}
+			if(next)
+			{	
+				$(this).fadeIn(eval(slide_animation_time));
+				next = false;
+				set_next = false;
+			}
+			if(set_next)
+			{
+				next = true;
+			}
+		});
+		
+		if(next)
+		{
+			$("#"+first).fadeIn(eval(slide_animation_time));
+			next = false;
+		}
+	}
+	
+	function next_image_slide(classsasa, slide_animation_time, total_slides)
+	{
+		var next = false;
+		var set_next = false;
+		var first = "";
+		var a = 1;
+		$("."+classsasa).each(function(){
+			if(first == "")
+			{
+				first = $(this).attr("id");
+			}
+			var display = $(this).css("display");
+			if(display != "none")
+			{
+				$(this).slideUp(eval(slide_animation_time));
+				set_next = true;
+			}
+			if(next)
+			{	
+				$(this).slideDown(eval(slide_animation_time));
+				next = false;
+				set_next = false;
+			}
+			if(set_next)
+			{
+				next = true;
+			}
+		});
+		
+		if(next)
+		{
+			$("#"+first).slideDown(eval(slide_animation_time));
+			next = false;
+		}
+	}
+	
+	function cast_pole_vote(polls_id)
+	{
+		var selected_answer = "";
+		$("#poll_answers_"+polls_id+" input").each(function(){
+			if($(this).attr("checked"))
+			{
+				selected_answer = $(this).attr("key");
+			}
+		});
+		if(selected_answer == "")
+		{
+			alert("Please select an answer before voting.");
+		}
+		else
+		{
+			$("#poll_answers_"+polls_id).slideUp('normal');
+			$("#poll_"+polls_id+"_status").html("<span class='load'></span>").slideDown('normal').load("content/cast_vote.php",{polls_id: polls_id, answer: selected_answer});
+		}
+	}
+	
+</script>	                <link type="text/css" href="admin/templates/custom-theme/jquery-ui-1.8rc3.custom.css" rel="stylesheet" />
+				<link rel="stylesheet" type="text/css" href="templates/general_template_information/css/lightbox.css">
+                <link rel="stylesheet" type="text/css" href="admin/templates/calander/calander.css">
+                <link rel="stylesheet" type="text/css" href="templates/general_template_information/css/general.css">
+                <link rel="stylesheet" type="text/css" href="admin/templates/e-commerce/e-commerce.css">
+				<link rel="stylesheet" type="text/css" href="admin/templates/e-commerce/custom-css/product-menu.css">
+				<link rel="stylesheet" type="text/css" href="admin/templates/e-commerce/custom-css/general-settings.css">
+				<link rel="stylesheet" type="text/css" href="admin/templates/e-commerce/custom-css/product-information.css">
+				<link rel="stylesheet" type="text/css" href="templates/t2/submenu/submenu.css">
+				<link rel="stylesheet" type="text/css" href="admin/templates/twitter_feed/twitter_feed.css">
+                <link rel="stylesheet" type="text/css" href="admin/templates/general_template_information/nivoslider/nivo-slider.css" />
+                <link rel="stylesheet" type="text/css" href="admin/templates/general_template_information/nivoslider/custom-nivo-slider.css" />
+										<link rel="stylesheet" type="text/css" href="templates/t2/css/style_default.css">
+												<link rel="stylesheet" type="text/css" href="templates/t2/themes/default/css/theme_default.css">
+						</head>
+<body>	<div class="upgrade_ie6" style="position: fixed; top: 0; width: 100%; display: none">
+		<img src="images/IE6Upgrade.gif" /><div style="margin-left: 130px;"><a href="javascript: void(0)" onclick="$('.upgrade_ie6').slideUp('normal')">hide</a></div>
+	</div>
+	<script language="javascript" type="text/javascript">
+		if ($.browser.msie && $.browser.version.substr(0,1)<7) 
+		{
+			$(".upgrade_ie6").slideDown('normal');
+		}
+	</script>
+	<div class="content_wrapper">
+		<div id="content">
+			<div class="header_spacer">&nbsp;</div>
+<div class="content_wrapper">
+	<div class="content_body full_content">
+		<table cellpadding="0" cellspacing="0" class="full_content">
+			<tr>
+				<td class="main_menu_td" valign="top">
+                	<div class="search_tool"><form action="search" method="post">
+    <div class="__content_block__">
+        <div class="__content_heading__">
+            <h2>Search this website</h2>
+        </div>
+        <div class="__content__">
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td><input type="text" id="search_phrase" name="search_phrase" style="width: 95%;" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Search Options</strong></td>
+                </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>Headings Only&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><input type="radio" name="search_options" value="headers_only" /></td>
+                </tr>
+                <tr>
+                    <td>All Content&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><input type="radio" checked="checked" name="search_options" value="headers_and_content" /></td>
+                </tr>
+            </table>
+            <input type="hidden" value="run_webpro_search" value="run_webpro_search" />
+            <input type="hidden" value="active_search" name="active_search" />
+            <input type="submit" value="Search" />
+        </div>
+    </div>
+</form>
+<div class="spacer"></div></div>
+					<div class="main_menu">			<div class="menu">
+								<div style="float: left;">
+												<a id="menu_1_item_0" class="menu_item_a menu_item_a_end"  href="home">Home</a>
+												<script language="javascript" type="text/javascript">
+							$("#menu_1_item_0").mouseover(function(){
+								$('#submenu_menu_1_item_0').css('display','block');
+								$('#submenu_menu_1_item_0').attr('mo','1');
+							});
+							
+							$("#submenu_menu_1_item_0").mouseover(function(){
+								$("#menu_1_item_0").addClass('hover');
+							});
+	
+							$('#submenu_menu_1_item_0, #menu_1_item_0').mouseout(function(){
+								$('#submenu_menu_1_item_0').attr('mo','0');
+								setTimeout(function(){
+									var mo = $('#submenu_menu_1_item_0').attr('mo');
+									if(mo == '0')
+									{
+										$('#submenu_menu_1_item_0').css('display','none');
+										$('#menu_1_item_0').removeClass('hover');
+									}
+								},100);
+							});
+							
+							$('#submenu_menu_1_item_0').mouseover(function(){
+								$('#submenu_menu_1_item_0').attr('mo','1');
+							});
+						</script>
+						</div>
+											<div style="float: left;">
+												<a id="menu_1_item_1" class="menu_item_a"  href="about-us">About us</a>
+												<script language="javascript" type="text/javascript">
+							$("#menu_1_item_1").mouseover(function(){
+								$('#submenu_menu_1_item_1').css('display','block');
+								$('#submenu_menu_1_item_1').attr('mo','1');
+							});
+							
+							$("#submenu_menu_1_item_1").mouseover(function(){
+								$("#menu_1_item_1").addClass('hover');
+							});
+	
+							$('#submenu_menu_1_item_1, #menu_1_item_1').mouseout(function(){
+								$('#submenu_menu_1_item_1').attr('mo','0');
+								setTimeout(function(){
+									var mo = $('#submenu_menu_1_item_1').attr('mo');
+									if(mo == '0')
+									{
+										$('#submenu_menu_1_item_1').css('display','none');
+										$('#menu_1_item_1').removeClass('hover');
+									}
+								},100);
+							});
+							
+							$('#submenu_menu_1_item_1').mouseover(function(){
+								$('#submenu_menu_1_item_1').attr('mo','1');
+							});
+						</script>
+						</div>
+											<div style="float: left;">
+												<a id="menu_1_item_2" class="menu_item_a"  href="news">News</a>
+												<script language="javascript" type="text/javascript">
+							$("#menu_1_item_2").mouseover(function(){
+								$('#submenu_menu_1_item_2').css('display','block');
+								$('#submenu_menu_1_item_2').attr('mo','1');
+							});
+							
+							$("#submenu_menu_1_item_2").mouseover(function(){
+								$("#menu_1_item_2").addClass('hover');
+							});
+	
+							$('#submenu_menu_1_item_2, #menu_1_item_2').mouseout(function(){
+								$('#submenu_menu_1_item_2').attr('mo','0');
+								setTimeout(function(){
+									var mo = $('#submenu_menu_1_item_2').attr('mo');
+									if(mo == '0')
+									{
+										$('#submenu_menu_1_item_2').css('display','none');
+										$('#menu_1_item_2').removeClass('hover');
+									}
+								},100);
+							});
+							
+							$('#submenu_menu_1_item_2').mouseover(function(){
+								$('#submenu_menu_1_item_2').attr('mo','1');
+							});
+						</script>
+						</div>
+											<div style="float: left;">
+												<a id="menu_1_item_4" class="menu_item_a"  href="projects">Projects</a>
+												<script language="javascript" type="text/javascript">
+							$("#menu_1_item_4").mouseover(function(){
+								$('#submenu_menu_1_item_4').css('display','block');
+								$('#submenu_menu_1_item_4').attr('mo','1');
+							});
+							
+							$("#submenu_menu_1_item_4").mouseover(function(){
+								$("#menu_1_item_4").addClass('hover');
+							});
+	
+							$('#submenu_menu_1_item_4, #menu_1_item_4').mouseout(function(){
+								$('#submenu_menu_1_item_4').attr('mo','0');
+								setTimeout(function(){
+									var mo = $('#submenu_menu_1_item_4').attr('mo');
+									if(mo == '0')
+									{
+										$('#submenu_menu_1_item_4').css('display','none');
+										$('#menu_1_item_4').removeClass('hover');
+									}
+								},100);
+							});
+							
+							$('#submenu_menu_1_item_4').mouseover(function(){
+								$('#submenu_menu_1_item_4').attr('mo','1');
+							});
+						</script>
+						</div>
+											<div style="float: left;">
+												<a id="menu_1_item_5" class="menu_item_a menu_item_a_start"  href="contact-us">Contact Us</a>
+												<script language="javascript" type="text/javascript">
+							$("#menu_1_item_5").mouseover(function(){
+								$('#submenu_menu_1_item_5').css('display','block');
+								$('#submenu_menu_1_item_5').attr('mo','1');
+							});
+							
+							$("#submenu_menu_1_item_5").mouseover(function(){
+								$("#menu_1_item_5").addClass('hover');
+							});
+	
+							$('#submenu_menu_1_item_5, #menu_1_item_5').mouseout(function(){
+								$('#submenu_menu_1_item_5').attr('mo','0');
+								setTimeout(function(){
+									var mo = $('#submenu_menu_1_item_5').attr('mo');
+									if(mo == '0')
+									{
+										$('#submenu_menu_1_item_5').css('display','none');
+										$('#menu_1_item_5').removeClass('hover');
+									}
+								},100);
+							});
+							
+							$('#submenu_menu_1_item_5').mouseover(function(){
+								$('#submenu_menu_1_item_5').attr('mo','1');
+							});
+						</script>
+						</div>
+									</div>
+			</div>
+					<div style="clear: both"></div>
+					<br /><br />
+					<div class="content_col_left"></div>
+					<br /><br />
+				</td>
+				<td width="34">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td class="main_content_td" valign="top"><div class="main_content">							<div class="__content_block__" id="__content_block__33">
+																	<div class="__content_heading__">
+																					<h1><p>Tippler Load Beam Replacement - Port of Port Elizabeth</p></h1>
+																					<div class="heading_bottom_spacer_1"><div class="spacer2"><img src="images/spacer.gif" /></div></div>
+										<div class="heading_bottom_spacer_2"><div class="spacer2"><img src="images/spacer.gif" /></div></div>
+									</div>
+																	<div class="__content__">
+								<table cellpadding="0" cellspacing="0" border="0">
+
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_0/large/01122009(002) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_0/med/01122009(002) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_1/large/01122009(005) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_1/med/01122009(005) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_2/large/01122009(006) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_2/med/01122009(006) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_3/large/01122009(012) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_3/med/01122009(012) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_4/large/05122009(005) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_4/med/05122009(005) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_5/large/05122009(007) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_5/med/05122009(007) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_6/large/05122009(008) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_6/med/05122009(008) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_7/large/06122009(001) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_7/med/06122009(001) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_8/large/06122009(002) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_8/med/06122009(002) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_9/large/06122009(003) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_9/med/06122009(003) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_10/large/06122009(006) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_10/med/06122009(006) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_11/large/06122009(011) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_11/med/06122009(011) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_12/large/06122009(012) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_12/med/06122009(012) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_13/large/12112009(001) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_13/med/12112009(001) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_14/large/12112009(002) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_14/med/12112009(002) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_15/large/12112009(003) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_15/med/12112009(003) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_16/large/12112009(004) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_16/med/12112009(004) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_17/large/12112009(005) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_17/med/12112009(005) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_18/large/16112009(005) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_18/med/16112009(005) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_19/large/16112009(006) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_19/med/16112009(006) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_20/large/18112009(007) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_20/med/18112009(007) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_21/large/19112009(001) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_21/med/19112009(001) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_22/large/19112009(002) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_22/med/19112009(002) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_23/large/19112009(005) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_23/med/19112009(005) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_24/large/19112009(007) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_24/med/19112009(007) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_25/large/23112009 (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_25/med/23112009 (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_26/large/23112009(002) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_26/med/23112009(002) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_27/large/23112009(004) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_27/med/23112009(004) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_28/large/24112009(004) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_28/med/24112009(004) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_29/large/26112009(001) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_29/med/26112009(001) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_30/large/26112009(004) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_30/med/26112009(004) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_31/large/30112009(004) (800 x 600).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_31/med/30112009(004) (800 x 600).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_32/large/DSC04972 (640 x 480).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_32/med/DSC04972 (640 x 480).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_33/large/DSC04978 (640 x 480).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_33/med/DSC04978 (640 x 480).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_34/large/DSC04980 (640 x 480).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_34/med/DSC04980 (640 x 480).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_35/large/DSC04986 (640 x 480).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_35/med/DSC04986 (640 x 480).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_36/large/DSC04987 (640 x 480).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_36/med/DSC04987 (640 x 480).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_37/large/DSC04988 (640 x 480).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_37/med/DSC04988 (640 x 480).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td><td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_38/large/DSC05004.jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_38/med/DSC05004.jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nbsp;</td>
+		</tr>
+		
+			<tr height="3">
+				<td height="3" colspan="3"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+				<td height="3" width="10"><div style="height: 3px; overflow: hidden;">&nbsp;</div></td>
+			</tr>
+			
+		<tr style='height: 150px;'>
+		<td class="image_strip_td" width="160"  style="height: 150px;" align="center"><a class="lightbox_33 lightbox_image" href="images/main_content/image_strip/33_39/large/DSC05005 (640 x 480).jpg"><img class="lightbox_image" src="images/main_content/image_strip/33_39/med/DSC05005 (640 x 480).jpg" border="0" /></a>
+					<script language="javascript" type="text/javascript">
+						$(function() {
+							$(".lightbox_33").lightBox({fixedNavigation:true});
+						});
+					</script>
+					</td><td>&nb

@@ -1,0 +1,105 @@
+body { 
+	margin: 20px; 
+	font-family:"Century Gothic", Arial, Helvetica, sans-serif;
+	background-color:#3f464c;
+	bbackground-color:blue;
+	text-align:center;
+}
+
+#mainblock {
+	width:750px;
+	background-color:white;
+	background-repeat:no-repeat;
+	background-position:bottom right;
+	margin:10px auto 20px auto;
+	text-align:left;
+	border:0px solid black;
+	position:relative;
+}
+
+#menu {
+	width:750px;
+	background-color:#ea212b;
+	text-align:center;
+	height:40px;
+	border-bottom:0px solid black;
+}
+
+#innermenu {
+	height:40px;
+	border-bottom:1px solid black;
+	position:relative;
+}
+
+#menu ul {
+  width:500px;
+  position:absolute;
+  bottom:-1px;
+  left:50%;
+  list-style-type: none;
+  margin:0px 0px 0px -250px;
+  padding:0px;
+  border:0px solid green;
+  overflow:hidden;
+}
+#menu ul li {
+  background-color:white;
+  padding:0px;
+  font-size:12px;
+  float:left;
+  margin:0px 3px 0px 0px;
+  text-align:center;
+  border:1px solid black;
+  border-bottom-color:black;
+  position:relative;
+}
+
+#menu ul li a {
+	color:gray;
+}
+
+#menu ul li#active {
+  border:1px solid black;
+  border-bottom-color:white;
+}
+
+#menu ul li#active a {
+	color:black;
+}
+
+#menu ul li a {
+  padding:10px;
+}
+
+#jlogo {
+	display:block;
+	height:135px;
+	text-align:right;
+	padding-right:10px;
+}
+
+a {
+	text-decoration:none;
+	color:black;
+}
+
+#mainblock pre {
+		  font-size:13px;
+		  border:2px dotted gray;
+		  color:black;
+		  padding:7px;
+		  margin:0px 10px 0px 10px;
+}
+
+#mainblock h2 {
+		 font-size:16px;
+		  color:black;
+		  padding:0px;
+		  margin:20px 0px 10px 10px;
+		  clear:both;
+}
+
+#mainblock input, #mainblock p {
+		 margin:0px 0px 10px 10px;
+		 font-size:12px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="files/example.css"></link>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript" src="../jquery.corner.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#menu ul li").corner("6px top");
+			$("#mainblock").corner("20px");
+			$("#steps li").corner("right 28px bevel overSized #ffffff");
+		});
+    </script>
+    <style type="text/css">
+    	#steps {
+	    	list-style-type:none;
+	    	padding:0px;
+	    	margin:10px 0px 0px 10px;
+	    }
+	    #steps li {
+		    background-color:#3f464c;
+		    padding:10px;
+		    float:left;
+		    border:1px solid black;
+		    padding-right:38px;
+		    color:white;
+		    font-size:12px;
+		    margin-right:2px;
+		}
+		#steps li b {
+			font-size:15px;
+			display:block;
+		}
+    </style>
+  </head>
+
+  <body>
+  	<div id="mainblock">
+  		<div id="menu">
+  			<div id="innermenu">
+		    <ul>
+		    	<li id="active"><a href="index.html">Welcome</a></li>
+		    	<li><a href="corners.html">Corners</a></li>
+		    	<li><a href="borders.html">Borders</a></li>
+		    	<li><a href="elements.html">Elements</a></li>
+		    	<li><a href="other.html">Other</a></li>
+		    	<li><a href="otherplugins.html">With other plugins</a></li>
+		    </ul>
+		    </div>
+		 </div>
+		 <br />
+
+		<pre style="width:500px;">$(document).ready(function() {
+	$("#menu ul li").corner("6px top");
+	$("#mainblock").corner("20px");
+	$("#steps li").corner("right 30px bevel overSized");
+});</pre>
+
+	<ul id="steps">
+		<li><b>Step 1</b> Use jQuery</li>
+		<li><b>Step 2</b> Use JRC</li>
+		<li><b>Step 3</b> Your done :)</li>
+	</ul>
+
+		  <div id="jlogo"><img  src="files/jQuery-logo.gif" /></div>
+    </div> 
+    
+  </body>
+</html>

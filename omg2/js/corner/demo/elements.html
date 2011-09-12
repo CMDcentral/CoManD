@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="files/example.css"></link>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript" src="../jquery.corner.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#menu ul li").corner("6px top");
+			
+			$(".nesteddivs").corner();
+			
+			$("#divline").corner();
+			
+			$("#table1").corner("6px");
+			$("#table2 td").corner("5px");
+			$("#appendtotd").click(function(){
+				$("#table2 td .JrcTdContainer").append("<br />2<br />3<br />4");
+			});
+			
+			$("#inlinetext b,#inlinetext span").corner();
+			$("#inlinetext a").corner("hover");
+			
+			$("#mainblock").corner("20px ie6fixheightint");
+		});
+    </script>
+    <style type="text/css">
+    	.nesteddivs {
+		  color:black;
+		  font-weight:bold;
+		  text-align:center;
+		  padding:5px;
+		  margin:10px;
+		  border:1px solid black;
+		  font-size:11px;
+	  }
+	  #divline {
+		  background-color:#ce1d26;
+		  height:16px;
+		  margin:0px 10px 0px 10px;
+	  }
+	  table {
+		  border:1px solid #4680b6;
+		  width:400px;
+		  margin-left:10px;
+	  }
+	  table td {
+		  font-size:14px;
+		  color:black;
+		  background-color:#4680b6;
+		  text-align:center;
+		  width:200px;
+	  }
+	  #inlinetext {
+		  width:500px;
+		  margin:10px;
+		  color:black;
+		  font-size:14px;
+	  }
+	  #inlinetext b {
+		  background-color:black;
+		  color:white;
+		  padding-left:4px;
+		  padding-right:4px;
+	  }
+	  #inlinetext span {
+		  border:1px solid white;
+		  padding-left:4px;
+		  padding-right:4px;
+		  white-space:nowrap;
+	  }
+	  #inlinetext a {
+		  text-decoration:underline;
+		  padding-left:4px;
+		  padding-right:4px;
+		  white-space:nowrap;
+		  text-decoration:none;
+      }
+      #inlinetext a.jrcHover {
+	      background-color:black;
+	      color:white;
+	  }
+    </style>
+  </head>
+
+  <body>
+  	<div id="mainblock">
+  		<div id="menu">
+  			<div id="innermenu">
+		    <ul>
+		    	<li><a href="index.html">Welcome</a></li>
+		    	<li><a href="corners.html">Corners</a></li>
+		    	<li><a href="borders.html">Borders</a></li>
+		    	<li id="active"><a href="elements.html">Elements</a></li>
+		    	<li><a href="other.html">Other</a></li>
+		    	<li><a href="otherplugins.html">With other plugins</a></li>
+		    </ul>
+		    </div>
+		 </div>
+		 <br />
+
+		<h2>Nested divs</h2>
+    
+    <div id="nd1" class="nesteddivs">
+    	<div id="nd11" class="nesteddivs">
+    		<div id="nd12" class="nesteddivs">&nbsp;</div>
+    	</div>
+    </div>
+    
+    <div id="nd2"class="nesteddivs">1
+    	<div id="nd21" class="nesteddivs">2
+    		<div id="nd22" class="nesteddivs">3</div>
+    	</div>
+    </div>
+    
+    <h2>Div line</h2>
+    
+    <div id="divline"></div>
+    
+    <h2>Table</h2>
+    
+    <table id="table1">
+    	<tr>
+    		<td>1</td>
+    		<td>2</td>
+    	</tr>
+    	<tr>
+    		<td>3</td>
+    		<td>4</td>
+    	</tr>
+    </table>
+  	
+    
+    <h2>Table data</h2>
+     <input id="appendtotd" type="button" value="Append" />
+    <table id="table2">
+    	<tr>
+    		<td>1</td>
+    		<td>2</td>
+    	</tr>
+    	<tr>
+    		<td>3</td>
+    		<td>4</td>
+    	</tr>
+    </table>
+    
+    <h2>Inline</h2>
+     <p>Experimental (does not work in opera)</p>
+     <div id="inlinetext">
+     Weld aso the ithe 12 3134 <b>Fatedin suld hatio</b> stions, Psy, arefer, subly cambough the not ding hilly a preve loper yought got ned toloser, 
+     boys beced Load of on donglictuat by of etal as ww perass L. The Of th thand ing and thallso tand frease, wase or orel thimesio rod per 
+     thent libillud havall prelficion tharear jork, winfort woodific a <b>ponot</b> jobserse per, Herso-dationly bely aniplegis of theen of ther 81
+     Tealiken cloplay, a Unifed al fice conatare <span>Cogiter cogy</span> Sch gor ma phys inkintle neam. I al suctsel ch in promarnith wile, angesed Scout, 
+     wich of of A Mectioup itents anomect doence; the of Murrign 2. I whore reachnow. <a href="http://www.youtube.com/watch?v=Le-4Y1eyvdk">Stes ablemill</a> nothe and is prequen
+    </div>
+
+		  <div id="jlogo"><img  src="files/jQuery-logo.gif" /></div>
+    </div> 
+    
+  </body>
+</html>

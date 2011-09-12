@@ -1,0 +1,7 @@
+<?
+echo form_open("member/save");
+echo "<p></p>";
+echo "<p>".."</p>";
+echo "<p>".."</p>";
+echo form_close();
+?>

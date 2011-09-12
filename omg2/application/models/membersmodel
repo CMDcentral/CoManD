@@ -1,0 +1,86 @@
+<?php
+
+class Pagesmodel extends CI_Model {
+
+    var $CI;
+
+    function delete($id)
+    {
+	$this->db->where('id', $id);
+        if ($this->db->delete('employee'))
+	 return true;
+	else
+	 return false;
+    }
+
+    function get($alias)
+    {
+	if ($alias == "")
+		$alias = "home";
+	if (is_numeric($alias))
+	 $this->db->where('id', $alias);
+	else
+     	 $this->db->where('alias', $alias);
+        
+	$query = $this->db->get('pages');
+        return $query->result();
+    }
+
+    function get_sidebar($id)
+    {
+	$this->db->where('page', $id);
+	$query = $this->db->get('sidebar');
+        return $query->result();
+    }
+
+    function get_all()
+    {
+        $query = $this->db->get('pages');
+        return $query->result();
+    }
+
+    function save($data)
+    {
+        if (isset($data['id'])) {
+         $this->db->where('id', $data['id']);
+         $this->db->update('pages', $data);
+         return $data['id'];
+        } else {
+         $this->db->insert('pages', $data);
+         return $this->db->insert_id();
+        }
+    }
+
+    function save_auth($data)
+    {
+	$data['id'] = $data['id'];
+	$data['company'] = $this->session->userdata('user')->company;
+	$data['PASSWORD'] = $this->_prep_password($data['PASSWORD']);
+	$this->db->set('id', $data['id']);
+	$this->db->set('group', 1);
+	$this->db->set('username', $data['username']);
+	$this->db->set('PASSWORD', $data['PASSWORD']);
+	if ($this->db->insert('authorised'))
+	 return true;
+	else
+	 return false;
+    }
+
+    function deauth($id)
+    {
+	$user = $this->get($id);
+	if ($user['details'][0]->company != $this->session->userdata('user')->company)
+		return false;
+	$this->db->where('id', $id);
+        if ($this->db->delete('authorised'))
+         return true;
+        else
+         return false;
+    }
+
+     	function _prep_password($password)
+        {
+        return sha1($password.$this->config->item('encryption_key'));
+        }
+}
+?>

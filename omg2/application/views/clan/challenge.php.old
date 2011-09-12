@@ -1,0 +1,106 @@
+<h3>Challenge</h3>
+<form onsubmit="//return checkTeams()" action="/challenge/request.html" method="POST" id="challenge">
+<table width="100%">
+<thead><tr><th>My Clan/Team</th><th>Challenge Clan/Team</th></tr></thead>
+<tr>
+<td>
+<?
+
+$arr = array();
+$arr2 = array();
+$arr3 = array();
+$arr7 = array();
+
+foreach ($myclan as $clan) {
+	 $arr2[$clan->cid] = $clan->name;
+}
+
+foreach ($myteams as $team) {
+	$arr3[$team->id] = $arr2[$team->clan].  " " . $team->t_name;
+}
+
+//print_r($team);
+
+echo "<p><label>My Team</label>".form_dropdown("team1", $arr3,"", 'id="myteam"'). "</p>";
+foreach ($teams as $team)
+        $arr7[$team->id] = $team->t_name;
+
+$now = date("Y-m-d");
+$arr = array('playdate'=>$now, 'time'=>"", 'game'=>"", 'maps'=>"", 'notes'=>"", 'mode' => "");
+item("Game:", "game", "", $arr);
+item("Mode:", "mode", "", $arr);
+textarea("Maps: <sub>(1 per line)</sub>", "maps", "", $arr);
+
+?>
+</td>
+<td>
+<?
+
+echo  "<p><label>Opposition Team</label>".form_dropdown("team2", $arr7,"","id='oppteam'"). "</p>";
+item("Date:", "playdate", "class='datepicker'", $arr);
+item("Time:", "time", "", $arr);
+?>
+</td>
+</tr>
+</table>
+<input type="submit" value="Challenge!" />
+</form>
+<?
+?>
+<script type="text/javascript">
+
+jQuery.ready(function() {
+
+$(function() {
+                var availableTags = [
+                        "Battlefield Bad Company 2",
+                        "Battlefield 3",
+                        "Warcraft",
+                        "Call Of Duty 4",
+                        "Call Of Duty 5"
+                ];
+                $( "#game" ).autocomplete({
+                        source: availableTags
+                });
+});
+
+
+$('#time').timepicker({});
+
+jQuery.validator.addMethod("notEqualTo", function(value, element, param) {
+ return this.optional(element) || value != $(param).val();
+ }, "This has to be different...");
+
+	// validate signup form on keyup and submit
+$("#challenge").validate({
+		rules: {
+			myteam: "required",
+			playdate: "required",
+			time: "required",
+			game: "required",
+			maps: "required",
+			oppteam: {
+				required: true,
+				notEqualTo: "#myteam"
+			}
+		},
+		messages: {
+			oppteam: {
+				notEqualTo: "You can't challenge yourself."
+			}
+		}
+	});
+
+function checkTeams()
+{
+if ($("#myteam").val() == $("#oppteam").val()) {
+	alert("You can't challenge yourself"); return false;
+}
+else {
+	return true;
+}
+}
+
+});
+
+</script>

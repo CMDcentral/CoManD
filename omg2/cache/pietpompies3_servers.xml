@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xfire>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.213.47.146</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.213.33.125</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.133.30.179</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.145.232.121</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.13</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.210.233.133</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.207.47.112</ip>
+		<port>20800</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.38.180.35</ip>
+		<port>28950</port>
+		<country>za</country>
+		<name>^1-IS- ^0NET^1SKY ^4PromodLive 2.11eu</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.34.243.13</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.38.180.35</ip>
+		<port>28970</port>
+		<country>za</country>
+		<name>^1-IS- ^0Promod Public ^12 ^4PromodLive 2.11eu</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.38.180.35</ip>
+		<port>28980</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.38.180.37</ip>
+		<port>28910</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.14</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^9=&gt;^1SWM^9/^4Galactic Warfare^9&lt;=</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.18</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.30</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^1ReIgn ^3Of ^2ThE ^1UnDeaD</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.29</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.31</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^2Gungame</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.240.61.249</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>92.48.112.49</ip>
+		<port>2304</port>
+		<country>gb</country>
+		<name>^2*^3GOLDMEMBER^2*^6Fat Bastard</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.28</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^4Promod ^3Snipers ^4only</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.26</ip>
+		<port>28961</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^4Alpha X15 Special Version!</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.19</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^2ProMOD^1211 ^2SnD Pub #2</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.21</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^2ProMOD^1211 ^2SnD Pub #1</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.22</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^4ZOMBIES!!!</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.23</ip>
+		<port>28961</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.25.33.24</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Ispacegaming-(uSo)clan </name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.82</ip>
+		<port>28990</port>
+		<country>za</country>
+		<name>-= SGS COD4 HARDCORE WARFARE I SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.214</ip>
+		<port>28963</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.214</ip>
+		<port>28961</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.214</ip>
+		<port>28964</port>
+		<country>za</country>
+		<name>iGame ProMOD Open</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.71</ip>
+		<port>28990</port>
+		<country>za</country>
+		<name>-= SGS COD4 CLAN HOLMIUM SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.75</ip>
+		<port>28990</port>
+		<country>za</country>
+		<name>-= SGS COD4 CLAN RADON SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28963</port>
+		<country>za</country>
+		<name>iGame Hardcore Delta</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28962</port>
+		<country>za</country>
+		<name>iGame Core Charlie</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.211</ip>
+		<port>28962</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.211</ip>
+		<port>28961</port>
+		<country>za</country>
+		<name>iGame ^1iNK Clan HC</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.211</ip>
+		<port>28963</port>
+		<country>za</country>
+		<name>iGame ProMOD Open 2</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>iGame Core Alpha</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28961</port>
+		<country>za</country>
+		<name>iGame Core Beta</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.77</ip>
+		<port>28970</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.78</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>-= SGS COD4 MAXI WARFARE I SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.81</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>-= SGS COD4 CLAN CERIUM SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.79</ip>
+		<port>28990</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.82</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>-= SGS COD4 TDM WARFARE SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.82</ip>
+		<port>28970</port>
+		<country>za</country>
+		<name>-= SGS COD4 PROMOD S&amp;D SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.82</ip>
+		<port>28980</port>
+		<country>za</country>
+		<name>-= SGS COD4 TACTICAL WARFARE II SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.79</ip>
+		<port>28980</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.79</ip>
+		<port>28970</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.78</ip>
+		<port>28970</port>
+		<country>za</country>
+		<name>-= SGS COD4 MAXI WARFARE II SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.78</ip>
+		<port>28980</port>
+		<country>za</country>
+		<name>-= SGS COD4 MULTI WARFARE I SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.78</ip>
+		<port>28990</port>
+		<country>za</country>
+		<name>-= SGS COD4 MULTI WARFARE II SERVER =-</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.79</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.211</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>iGame Pro TDM</name>
+	</server>
+</xfire>

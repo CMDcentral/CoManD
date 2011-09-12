@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Demo 3</title>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript" src="../jquery.corner.js"></script>
+    <script type="text/javascript" src="files/jquery.dimensions.js"></script>
+    <script type="text/javascript" src="files/jquery.gradient.js"></script>
+    <script type="text/javascript" src="files/jquery.progression.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#mainblock").gradient({from: '24292c', to: '68747e'});
+			$("#mainblock").corner("20px");
+			$('.progressbar').progression({Current:100,aBackground:"#972b2b"}); 
+			$('.progressbar').corner("top #292f32").corner("bottom #2e3338");
+		});
+    </script>
+    <style type="text/css">
+      .MainDiv {
+	      mborder:1px solid black;
+	  }
+      body { 
+	      margin: 20px; 
+	      font-family: "Myriad Pro","Myriad Web","Lucida Grande","Trebuchet MS","Tahoma","Helvetica","Arial","sans-serif"; 
+	      background-color:#3f464c;
+	      bbackground-color:blue;
+	      text-align:center;
+	  }
+	  
+	  #mainblock {
+		  width:750px;
+		  height:260px;
+		  background-color:white;
+		  background-repeat:no-repeat;
+		  background-position:bottom right;
+		  margin:10px auto 20px auto;
+		  text-align:left;
+		  overflow:hidden;
+		  border:1px solid black;
+		  color:white;
+		  font-size:20px;
+	  }
+	  #txt {
+		  text-align:center;
+		  margin-top:70px;
+	  }
+	  #txt a {
+		  color:white;
+	  }
+	  .progressbar { 
+    	  border:1px solid #141719; 
+    	  width: 200px; 
+    	  height: 20px; 
+    	  line-height: 20px; 
+    	  text-align: center; 
+    	  positon:relative;
+    	  left:50%;
+    	  margin-left:-100px;
+    	  top:-165px;
+		}
+    </style>
+  </head>
+
+  <body>
+  	<div id="mainblock">
+  		<div id="txt">
+  			<a href="http://meerbox.nl/?page_id=4">jquery-roundcorners-canvas</a><br> 
+  			&<br>
+  		 	<a href="http://blog.brandonaaron.net/my-jquery-plugins/gradient/">Brandon Aaron's gradient plugin</a><br>
+  		 	&<br>
+  		 	<a href="http://www.anthor.net/fr/jquery-progression.html">jQuery Progression</a>
+  		 </div>
+  		 <div class="progressbar">50 %</div>
+    </div> 
+    
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xfire>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.73</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>66.8.59.12</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>66.8.59.13</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.6</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.63</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>66.8.59.19</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>-=JUDGES Clan RANKED BF2 Server [HypeGamez]=-</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.43</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.20</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>-= SGS BF2 RANKED I Server =-</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.23</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.31</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>-= SGS BF2 RANKED URBAN I Server =-</name>
+	</server>
+	<server>
+		<game id='4578' shortname='bf2'>Battlefield 2</game>
+		<ip>196.4.79.28</ip>
+		<port>16567</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.4.79.79</ip>
+		<port>28980</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>41.185.60.19</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>^7/WAGE/ ^2ProMOD^1211 ^2SnD Pub #2</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.214</ip>
+		<port>28964</port>
+		<country>za</country>
+		<name>iGame ProMOD Open</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28963</port>
+		<country>za</country>
+		<name>iGame Hardcore Delta</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28962</port>
+		<country>za</country>
+		<name>iGame Core Charlie</name>
+	</server>
+	<server>
+		<game id='5186' shortname='cod4mp'>Call of Duty 4: Modern Warfare Multiplayer</game>
+		<ip>196.2.97.212</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>iGame Core Alpha</name>
+	</server>
+	<server>
+		<game id='5624' shortname='codwawmp'>Call of Duty: World at War Multiplayer</game>
+		<ip>196.4.79.77</ip>
+		<port>28990</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5624' shortname='codwawmp'>Call of Duty: World at War Multiplayer</game>
+		<ip>196.4.79.77</ip>
+		<port>28960</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5624' shortname='codwawmp'>Call of Duty: World at War Multiplayer</game>
+		<ip>196.4.79.70</ip>
+		<port>28980</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+	<server>
+		<game id='5624' shortname='codwawmp'>Call of Duty: World at War Multiplayer</game>
+		<ip>196.4.79.70</ip>
+		<port>28990</port>
+		<country>za</country>
+		<name>Offline Server</name>
+	</server>
+</xfire>

@@ -1,0 +1,44 @@
+var createVML = function(rparent,radius,position,bg,border_width,border_color) {
+			
+			var maindiv = document.createElement('div');
+			maindiv.style.position = "absolute";
+			//maindiv.style.overflow = "hidden";
+			maindiv.style.width = radius+"px";
+			maindiv.style.height = radius+"px";
+			//maindiv.style.borderWidth = '0px;'
+			maindiv.style.margin = '0px;';
+			maindiv.style.zoom = '1';
+			maindiv.style.display = "block";
+			maindiv.className = "jrCorner";
+			appendToParent(rparent,maindiv);
+			
+			if (radius == 1) {
+				maindiv.style.backgroundColor = bg,h='';
+				return maindiv;
+			} else if (border_width < 1) {
+				var h = '<vml:shape style="width:100%; height:100%;" coordsize="300 300" strokecolor="red" strokeweight="0px" filled="true" path="m 300,300 l 300,0 c 300,0,300,300,0,300 l 300,300" stroked="false" coordorigin="0 0" fillcolor="'+bg+'">';
+		        h+= '</vml:shape>';
+			} else {
+				if (position == 'tl') r =  'rotation:180;';
+				if (position == 'tr') r =  'rotation:-90;';
+				if (position == 'bl') r =  'rotation:90;';
+				if (position == 'br') r =  'rotation:0;';
+				if (position == 'tl') c =  '  m 100,0 c 100,0,0,0,0,100';
+				if (position == 'tr') c =  '  m 0,0 c 0,0,100,0,100,100';
+				if (position == 'bl') c =  '  m 0,0 c 0,0,0,100,100,100';
+				if (position == 'br') c =  '  m 100,0 c 100,0,100,100,0,100';
+		        var h = '<vml:shape style="'+r+'width:100%; height:100%; " coordsize="300 300" strokecolor="red" strokeweight="0px" filled="true" path=" m 300,300 l 300,0 c 300,0,300,300,0,300 l 300,300 " stroked="false" coordorigin="0 0" fillcolor="'+bg+'"></vml:shape>';
+		        
+		        h+= '<vml:shape style="margin:0px;padding:0px;width: 100%; height:100%;"  coordsize="100 100" strokecolor="'+border_color+'" strokeweight="'+border_width+'px" filled="false" path="'+c+'" stroked="true" coordorigin="0 0" fillcolor="#3f464c"></vml:shape>';
+			}
+			
+			if (position == 'tl') s =  'left:-0px;   top:-0px;';
+			if (position == 'tr') s =  'right:-0px;  top:-0px;margin-right:1px;';
+			if (position == 'bl') s =  'left:-0px;   bottom:-0px;';
+			if (position == 'br') s =  'right:-0px;  bottom:-0px;margin-right:1px;';
+			
+			var h = '<vml:group style="border:0px solid white;'+s+'position: absolute;width: '+radius+'px;  height: '+radius+'px;">'+h+'</vml:group>';
+			maindiv.innerHTML = h;
+			
+			return maindiv;
+		}

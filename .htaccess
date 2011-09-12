@@ -1,0 +1,35 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+###Start Kloxo PHP config Area
+###Please Don't edit these comments or the content in between. kloxo uses this to recognize the lines it writes to the the file. If the above line is corrupted, it may fail to recognize them, leading to multiple lines.
+<Ifmodule mod_php5.c>
+php_value error_log /home/cmd/__processed_stats/test.cmdcentral.co.za.phplog
+php_value upload_max_filesize __lx__upload_max_filesize
+php_value max_execution_time  __lx__max_execution_time_flag
+php_value max_input_time  __lx__max_input_time_flag
+php_value memory_limit  128M
+php_value post_max_size  __lx__post_max_size_flag
+php_flag register_globals  off
+php_flag display_errors  on
+php_flag file_uploads  on
+php_flag log_errors  off
+php_flag output_buffering  off
+php_flag register_argc_argv  on
+php_flag magic_quotes_gpc   off
+php_flag magic_quotes_runtime  off
+php_flag magic_quotes_sybase  off
+php_flag mysql.allow_persistent  off
+php_flag register_long_arrays  on
+php_flag allow_url_fopen  on
+php_flag cgi.force_redirect  on
+php_flag enable_dl  on
+</Ifmodule>
+
+###End Kloxo PHP config Area
+

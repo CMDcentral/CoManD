@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="files/example.css"></link>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript" src="../jquery.corner.js"></script>
+    <script type="text/javascript">
+		$(function() {
+			$("#menu ul li").corner("6px top");
+	
+			$("#menu3 li, #menu4 li").corner("6px tl br ie6fixexpr");
+			
+			$("#changingheight").corner("10px");
+
+			$("#changingheightchange1").click(function(){
+				$("#changingheight").append("<br />2<br />3<br />4").corner("10px");
+			});
+			$("#changingheightchange2").click(function(){
+				$("#changingheight").height($("#changingheight").height()+20);
+			});
+			
+			$("#childofparenbackground").corner("50px");
+			
+			$("#childofhiddenparent").corner("15px hiddenParent");
+			$("#showhiddenparent").click(function(){
+				$("#hiddenparent").toggle('fast');
+			});
+			$("#hiddenelement").corner("10px");
+			$("#showhiddenelement").click(function(){
+				$("#hiddenelement").toggle('slow');
+			});
+			
+			$("#mainblock").corner("20px ie6fixheightint");
+			
+		});
+    </script>
+    <style type="text/css">
+	   #menu3,#menu4 {
+		  list-style-type: none;
+		  padding:0px;
+		  margin-left:10px;
+		  zoom:1;
+	  }
+	  #menu3 li,#menu4 li {
+		  width:91px;
+		  height:19px;
+		  background-color:#5a7a9d;
+		  padding:0px;
+		  border:0px solid black;
+		  font-size:14px;
+		  color:black;
+		  float:left;
+		  margin-right:3px;
+		  line-height:18px;
+		  text-align:center;
+		  margin-bottom:5px;
+		  border:1px solid black;
+	  }
+	  #menu3 li:hover {
+		  background-color:#283849;
+		  color:white;
+	  }
+	  #menu4 li {
+		  background-image:url('files/bg1.gif');
+	  }
+	  #changingheight {
+		  background-color:black;
+		  color:white;
+		  font-size:11px;
+		  text-align:center;
+		  margin:0px 10px 0px 10px;
+	  }
+	  #parenbackground {
+		  background-image:url('files/fire.jpg');
+		  width:248px;
+		  margin:0px 0px 0px 10px;
+	  }
+	  #childofparenbackground {
+		  background-color:red;
+		  width:200px;
+		  height:120px;
+		  margin-left:auto;
+		  margin-right:auto;
+	  }
+	  
+	  #hiddenparent {
+		  width:240px;
+		  padding:10px;
+		  border:1px solid black;
+		  display:none;
+		  margin-left:10px;
+	  }
+	  #childofhiddenparent {	  
+		  background-color:green;
+		  width:200px;
+		  height:60px;
+		  margin-left:auto;
+		  margin-right:auto;
+		  text-align:center;
+		  line-height:60px;
+	  }
+	  #hiddenelement {
+		  width:248px;
+		  padding:0px 0px 10px 10px;
+		  background-color:yellow;
+		  display:none;
+		  margin-left:10px;
+	  }
+    </style>
+  </head>
+
+  <body>
+  	<div id="mainblock">
+  		<div id="menu">
+  			<div id="innermenu">
+		    <ul>
+		    	<li><a href="index.html">Welcome</a></li>
+		    	<li><a href="corners.html">Corners</a></li>
+		    	<li><a href="borders.html">Borders</a></li>
+		    	<li><a href="elements.html">Elements</a></li>
+		    	<li id="active"><a href="other.html">Other</a></li>
+		    	<li><a href="otherplugins.html">With other plugins</a></li>
+		    </ul>
+		    </div>
+		 </div>
+		 <br />
+
+		<h2>Background color change</h2>
+    <ul id="menu3">
+    	<li>Look</li>
+    	<li>Ma</li>
+    	<li>No</li>
+    	<li>Images</li>
+    </ul>
+    
+    <h2>Background image</h2>
+    <ul id="menu4">
+    	<li>Look</li>
+    	<li>Ma</li>
+    	<li>No</li>
+    	<li>Images</li>
+    </ul>
+    
+     <h2>Changing height</h2>
+    <input id="changingheightchange1" type="button" value="Append" /><input id="changingheightchange2" type="button" value="Set height" />
+    <div id="changingheight">1</div>
+    
+    
+    
+    <h2>Parent has background image</h2>
+    
+    <p>Doesnt work</p>
+    
+    <div id="parenbackground"><br /><div id="childofparenbackground"></div><br /></div>
+    
+    
+    
+    <h2>Hidden parent</h2>
+	<pre>$("#childofhiddenparent").corner("15px hiddenParent");</pre>
+    <input id="showhiddenparent" type="button" value="Show" style="margin-top:10px;" />
+    
+    <div id="hiddenparent">
+    	<div id="childofhiddenparent">Boe!</div>
+    </div>
+    
+    <h2>Hidden element</h2>
+     <input id="showhiddenelement" type="button" value="Show" />
+    <div id="hiddenelement">Boe!</div>
+
+		  <div id="jlogo"><img  src="files/jQuery-logo.gif" /></div>
+    </div> 
+    
+  </body>
+</html>
